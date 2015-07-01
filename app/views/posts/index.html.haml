@@ -1,1 +1,10 @@
 %h1 Postagram
+
+%center
+  -@posts.each do |post|
+    .row  
+      =link_to (image_tag post.avatar.url(:medium)), post_path(post)
+      %p= post.caption
+%br
+%br
+= link_to 'New Post', new_post_path 
