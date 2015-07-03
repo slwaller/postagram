@@ -16,8 +16,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update_attributes post_params
-    redirect_to post_path(@post)
+    if @post.update(post_params)
+      flash[:success] = "Post updated."
+      redirect_to posts_path
+    else
+      flash[:alert] = "Update failed. Please try again."
+      render :edit
+    end
   end
 
   def create
@@ -25,7 +30,7 @@ class PostsController < ApplicationController
       flash[:success] = "Your post has been created!"
       redirect_to posts_path
     else
-      flash[:alert] = "Your new post couldn't be created!  Please check the form."
+      flash[:alert] = "Your new post couldn't be created! Please try again!"
       render :new
     end
   end
