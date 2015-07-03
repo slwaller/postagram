@@ -15,3 +15,13 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+$(".alert.alert-success").fadeOut(2000);
+
+$(".alert.alert-success").on( function() {
+    $(".alert.alert-success").fadeOut(2000);
+})
+
+})
