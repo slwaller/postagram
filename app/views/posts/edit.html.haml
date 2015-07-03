@@ -1,0 +1,27 @@
+%h1
+  %center
+    Items Being Edited
+.posts-wrapper.row
+  .post
+    .post-head
+      .name
+        Username here
+    .image.center-block
+      =image_tag @post.avatar.url(:medium)
+    %p.caption
+      =@post.caption
+%h1
+  %center
+    Edit Post
+
+.form-wrapper
+  = simple_form_for @post, html: { class: 'form-horizontal', multipart: true } do |f|
+    .form-group
+      = f.input :avatar
+    .form-group.text-center
+      = f.input :caption
+    .form-group.text-center
+      = f.button :submit, class: 'btn-success'
+
+.text-center
+  =link_to "Back", posts_path

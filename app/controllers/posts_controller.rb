@@ -11,6 +11,16 @@ class PostsController < ApplicationController
     @post = Post.create
   end
 
+  def edit
+    @post = Post.find params[:id]
+  end
+
+  def update
+    @post = Post.find params[:id]
+    @post.update_attributes post_params
+    redirect_to post_path(@post)
+  end
+
   def create
     if @post = Post.create(post_params)
       flash[:success] = "Your post has been created!"
