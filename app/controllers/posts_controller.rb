@@ -25,14 +25,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def create
-    if @post = Post.create(post_params)
-      flash[:success] = "Your post has been created!"
-      redirect_to posts_path
-    else
-      flash[:alert] = "Your new post couldn't be created! Please try again!"
-      render :new
-    end
+  def edit
   end
 
   def destroy
