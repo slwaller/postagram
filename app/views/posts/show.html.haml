@@ -2,12 +2,17 @@
   .post
     .post-head
       .name
-        Username here
+        = @post.user.user_name
     .image.center-block
       =image_tag @post.avatar.url(:medium)
     %p.caption
       =@post.caption
     .text-center
-      =link_to "Back", posts_path
-      %br
-      =link_to "Edit Post", edit_post_path(@post)
+    - if @post.user.id == current_user.id
+      .text-center.edit-links
+        =link_to "Back", posts_path
+        %br
+        =link_to "Edit Post", edit_post_path(@post)
+    - else
+      .text-center.edit-links
+        =link_to "Back", posts_path
