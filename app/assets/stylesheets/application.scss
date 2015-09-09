@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -29,14 +30,6 @@ body {
   a {
     color: #125688;
   }
-}
-
-.navbar {
-  margin-bottom: 0px;
-}
-
-.alert {
-  margin-bottom: 0px;
 }
 
 .navbar-default {
@@ -174,6 +167,24 @@ body {
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.login-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('bgposta.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.alert {
+  margin-bottom: 0px;
 }
 
 .log-in{
