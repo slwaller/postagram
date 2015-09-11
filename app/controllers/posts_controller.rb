@@ -29,6 +29,16 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def update
+    if @post.update(post_params)
+      flash[:success] = "Post updated."
+      redirect_to posts_path
+    else
+      flash[:alert] = "Update failed.  Please try again."
+      render :edit
+    end
+  end
+
   def destroy
     @post.delete
     redirect_to posts_path
