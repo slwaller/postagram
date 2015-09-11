@@ -16,6 +16,7 @@ gem 'simple_form', '~> 3.1.0'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'devise'
 gem 'html2haml'
+gem 'kaminari', '~> 0.16.3'  
 
 group :development, :test do
   gem 'byebug'
