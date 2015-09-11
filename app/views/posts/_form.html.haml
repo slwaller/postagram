@@ -2,7 +2,7 @@
   .post
     .post-body
       .image-wrap
-        = image_tag 'bgposta.jpg', id: 'image-preview', class: 'img-responsive'
+        = form_image_select(@post)
         = simple_form_for @post, html: { multipart: true } do |f|
           .row
             .col-md-12.text-center
@@ -12,6 +12,6 @@
               %h4 Upload an image (this is required):
               = f.input :avatar, label: false, input_html: { onChange: 'loadFile(event)' }
             .form-group.text-center
-              = f.input :caption, label: false, placeholder: 'Add your caption'
+              = f.input :caption, label: false, placeholder: 'Say something'
             .form-group.text-center
               = f.button :submit, class: 'btn-success btn-block'
