@@ -23,4 +23,11 @@ feature 'Creating a new user' do
     click_button 'Sign up'
     expect(page).to have_content("can't be blank")
   end
+
+  scenario 'requires a user name to be more than 4 characters' do
+    fill_in 'Email', with: 'rspecuser@mailinator.com'
+    fill_in 'User Name', with: 'a'
+    fill_in 'Password', with: 'password', match: :first
+    fill_in 'Confirm Password', with: 'password'
+  end
 end
