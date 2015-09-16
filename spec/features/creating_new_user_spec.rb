@@ -30,4 +30,11 @@ feature 'Creating a new user' do
     fill_in 'Password', with: 'password', match: :first
     fill_in 'Confirm Password', with: 'password'
   end
+
+  scenario 'requires a user name to be less than 12 characters' do
+    fill_in 'Email', with: 'rspecuser@mailinator.com'
+    fill_in 'User Name', with: 'a' * 13
+    fill_in 'Password', with: 'password', match: :first
+    fill_in 'Confirm Password', with: 'password'
+  end
 end
