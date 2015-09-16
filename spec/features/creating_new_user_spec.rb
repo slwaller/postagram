@@ -5,6 +5,7 @@ feature 'Creating a new user' do
     visit '/'
     click_link 'Register'
   end
+  
   scenario 'can create a new user through index page' do
     fill_in 'Email', with: 'rspecuser@mailinator.com'
     fill_in 'User Name', with: 'Rspecuser'
