@@ -12,4 +12,9 @@ feature 'viewing user profiles' do
   scenario 'visiting a profile page shows the username in URL' do
     # expect the page URL to be /users/username
   end
+
+  scenario 'a profile should only show the specified users posts' do
+    # expect the page to show only user owned posts
+    # expect the page to NOT show other users posts
+  end
 end
