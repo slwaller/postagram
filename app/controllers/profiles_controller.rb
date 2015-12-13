@@ -9,4 +9,6 @@ class ProfilesController < ApplicationController
     @user = User.find_by(user_name: params[:user_name])
   end  
 
+  def update
+  end
 end
