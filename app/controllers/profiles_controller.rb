@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   before_action :owned_profile, only: [:edit, :update]
+  before_action :set_user
 
   def show
     @user = User.find_by(user_name: params[:user_name])
@@ -22,6 +24,10 @@ class ProfilesController < ApplicationController
     end
   end
 private
+
+def set_user  
+  @user = User.find_by(user_name: params[:user_name])
+end
 
 def profile_params  
   params.require(:user).permit(:avatar, :bio)
