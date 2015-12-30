@@ -27,3 +27,4 @@ module ApplicationHelper
     image_tag 'bgposta.jpg', id: 'image-preview', class: 'img-responsive'
   end
 end
+end
