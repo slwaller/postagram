@@ -4,16 +4,13 @@ class ProfilesController < ApplicationController
   before_action :set_user
 
   def show
-    @user = User.find_by(user_name: params[:user_name])
     @posts = User.find_by(user_name: params[:user_name]).posts.order('created_at DESC')
   end
 
-  def edit  
-    @user = User.find_by(user_name: params[:user_name])
+  def edit
   end  
 
-  def update  
-    @user = User.find_by(user_name: params[:user_name])
+  def update
     if @user.update(profile_params)
       flash[:success] = 'Your profile has been updated.'
       redirect_to profile_path(@user.user_name)
