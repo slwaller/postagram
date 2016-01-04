@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :posts do
     resources :comments
+    member do
+      get 'like'
+    end
   end
 
   get ':user_name', to: 'profiles#show', as: :profile 
