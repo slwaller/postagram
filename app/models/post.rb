@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  acts_as_votable
+
   validates :avatar, presence: true
   validates :user_id, presence: true
   
