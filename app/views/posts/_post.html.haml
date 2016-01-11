@@ -6,14 +6,15 @@
         = post.user.user_name
       .time-ago
         = time_ago_in_words post.created_at
-    .image.center-block
-      = link_to (image_tag post.avatar.url(:medium), class:'img-responsive'),
+.image.center-block
+      =link_to (image_tag post.image.url(:medium), class:'img-responsive'),
                  post_path(post)
     .post-bottom
+      = render 'posts/likes', post: post
       .caption
         .caption-content
           .user-name
-            = link_to post.user.user_name, profile_path(post.user.user_name)
+            =link_to post.user.user_name, profile_path(post.user.user_name)
           = post.caption
           .comments{id: "comments_#{post.id}"}
             - if post.comments.any?
