@@ -1,5 +1,4 @@
 module PostsHelper  
-  # Our new helper method
   def likers_of(post)
     # votes variable is set to the likes by users.
     votes = post.votes_for.up.by_type(User)
