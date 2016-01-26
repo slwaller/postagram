@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  acts_as_voter
   validates :user_name, presence: true, length: { minimum: 4, maximum: 16 }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
